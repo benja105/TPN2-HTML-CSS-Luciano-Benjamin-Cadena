@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Blog - Fracture</title>
+    <link rel="stylesheet" href="css/estiloblog.css" />
+    <link rel="stylesheet" href="css/animaciones.css"/>
+    <link rel="icon" href="img/fracture.ico" type="image/icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">FRACTURE</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="clases.html">Clases</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="entrenadores.html">Entrenadores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="precios.html">Planes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item dropdown mega-menu-item">
+                            <a class="nav-link dropdown-toggle" href="#" id="megaMenuDropdown" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                    Más
+                            </a>
+                            <ul class="dropdown-menu mega-menu" aria-labelledby="megaMenuDropdown">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h5>Servicios</h5>
+                                        <a class="dropdown-item" href="#">Nutrición</a>
+                                        <a class="dropdown-item" href="#">Fisioterapia</a>
+                                        <a class="dropdown-item" href="#">Tienda</a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h5>Comunidad</h5>
+                                        <a class="dropdown-item" href="#">Eventos</a>
+                                        <a class="dropdown-item" href="#">Foro</a>
+                                        <a class="dropdown-item" href="#">Redes Sociales</a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h5>Acerca de</h5>
+                                        <a class="dropdown-item" href="#">Nosotros</a>
+                                        <a class="dropdown-item" href="#">Historia</a>
+                                        <a class="dropdown-item" href="#">Valores</a>
+                                    </div>
+                                </div>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <button id="theme-toggle" class="nav-link btn btn-link">Modo Oscuro</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <h1 class="subheader">Blog Fracture</h1>
+    <section class="contenido-filtrado">
+        <div class="tags filtros">
+            <input type="radio" name="tag" id="all" checked>
+            <label for="all">Todos</label>
+            <input type="radio" name="tag" id="nutricion">
+            <label for="nutricion">Nutrición</label>
+            <input type="radio" name="tag" id="entrenamiento">
+            <label for="entrenamiento">Entrenamiento</label>
+            <input type="radio" name="tag" id="salud">
+            <label for="salud">Salud</label>
+        </div>
+
+        <div class="container mt-4">
+
+        <main class="newspaper galeria">
+            <article class="post nutricion card mb-4">
+                <h2>Alimentos para potenciar tu rendimiento</h2>
+                <p>Una buena alimentación es clave para el progreso físico. Los macronutrientes —proteínas, carbohidratos y grasas— deben estar equilibrados según tus objetivos. Por ejemplo, un entrenamiento de fuerza requiere un mayor consumo de proteínas para reparar el tejido muscular, mientras que un entrenamiento cardiovascular puede beneficiarse de una buena carga de carbohidratos para mantener la energía.</p>
+                <p>Incluir alimentos como avena, huevos, plátanos, arroz integral, pollo, salmón y frutos secos puede mejorar significativamente tu rendimiento. Además, la hidratación adecuada es fundamental: al menos 2 litros de agua al día, aumentando si entrenás intensamente.</p>
+                <p>No olvides que los suplementos son solo eso: un complemento. Una dieta rica en alimentos reales siempre debe ser la base.</p>
+            </article>
+
+            <article class="post entrenamiento card mb-4">
+                <h2>Rutina de fuerza para principiantes</h2>
+                <p>Comenzar en el mundo del entrenamiento de fuerza puede ser intimidante, pero con la rutina adecuada, cualquier persona puede lograr grandes avances. Esta rutina está pensada para 3 días a la semana, centrada en ejercicios compuestos que trabajan múltiples grupos musculares.</p>
+                <p><strong>Día 1:</strong> Sentadillas, Press de banca, Remo con barra.
+                <strong>Día 2:</strong> Peso muerto, Press militar, Dominadas asistidas.
+                <strong>Día 3:</strong> Sentadilla búlgara, Fondos, Curl de bíceps + abdominales.</p>
+                <p>Enfocate en la técnica por encima del peso. Comenzá con series de 3x8 y descansá entre 60-90 segundos. Aumentá la carga progresivamente y no te olvides de calentar y estirar al final de cada sesión.</p>
+            </article>
+
+            <article class="post salud card mb-4">
+                <h2>Importancia del descanso y la recuperación</h2>
+                <p>El descanso es uno de los pilares más olvidados en el mundo del fitness, pero es tan crucial como la alimentación o el entrenamiento. Cuando dormís, tu cuerpo realiza funciones esenciales como la regeneración muscular, el equilibrio hormonal y la consolidación de la memoria muscular.</p>
+                <p>Se recomienda dormir entre 7 y 9 horas por noche. Además, incorporar días de descanso activo —como caminatas suaves, movilidad o yoga— ayuda a mejorar la circulación y reducir el riesgo de lesiones.</p>
+                <p>También podés usar herramientas como la liberación miofascial con foam roller, baños fríos o técnicas de respiración para acelerar la recuperación. Escuchá a tu cuerpo: si estás agotado, es mejor tomarte un día libre que forzar una sesión de baja calidad.</p>
+            </article>
+        </main>
+
+        <section class="comentarios mt-5">
+            <h3>Comentarios</h3>
+            <div class="comentario cards mb-3">
+                <div class="avatar"></div>
+                <p><strong>Luis:</strong> Excelente artículo, justo lo que necesitaba para arrancar.</p>
+            </div>
+            <div class="comentario cards mb-3 highlighted-comment">
+                <div class="avatar"></div>
+                <p><strong>María:</strong> Me encantó el enfoque sobre el descanso, muy útil.</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="redes">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">YouTube</a>
+        </div>
+        <p>&copy; 2025 Fracture - Todos los derechos reservados</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/blog.js"></script>
+</body>
+</html>

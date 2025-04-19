@@ -1,0 +1,505 @@
+/* Reset básico y box-sizing */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* HEADER */
+header {
+  background-color: #f8f9fa;
+  color: #000;
+  padding: 1rem 0;
+  /* Mantener el header fijo en la parte superior */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  /* Transición suave para el cambio de modo oscuro */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar {
+  padding: 0;
+}
+
+.container-fluid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.navbar-brand {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #000;
+  /* Transición suave para el color */
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #000;
+}
+
+.navbar-nav {
+  align-items: center;
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-link {
+  color: #000;
+  text-decoration: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  /* Transición suave para el fondo y el color */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  background-color: #eee;
+  color: #000;
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: #000;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  /* Transición suave para el fondo y el color */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-link:hover,
+.btn-link:focus {
+  background-color: #eee;
+  color: #000;
+}
+
+/* Mega Menu Dropdown */
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  display: none; /* Oculto por defecto - Manejado por Bootstrap */
+  padding: 1rem;
+  z-index: 1000;
+}
+
+.mega-menu .row {
+  display: flex;
+  flex-wrap: wrap; /* Asegura que las columnas se envuelvan en pantallas pequeñas */
+}
+
+.mega-menu .col-md-4 {
+  flex: 1; /* Distribuye el espacio equitativamente entre las columnas */
+  min-width: 200px; /* Evita que las columnas se estrechen demasiado */
+  margin-bottom: 1rem; /* Añade espacio entre las columnas en pantallas pequeñas */
+}
+
+.mega-menu h5 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.mega-menu a {
+  display: block;
+  padding: 0.25rem 0;
+  color: #000;
+  text-decoration: none;
+  /* Transición suave para el color */
+  transition: color 0.15s ease-in-out;
+}
+
+.mega-menu a:hover,
+.mega-menu a:focus {
+  color: #0a58ca;
+}
+
+/* Media Queries (Ajustes Adicionales) */
+@media (max-width: 768px) {
+  /* No necesitamos ocultar el mega-menu aquí, Bootstrap lo maneja con data-bs-toggle */
+
+  .mega-menu {
+      position: static; /* Cambia a static para fluir con el contenido */
+      display: none; /* Asegura que se oculte en mobile inicialmente */
+      opacity: 1 !important; /* Importante para evitar problemas con la opacidad de Bootstrap */
+      visibility: visible !important; /* Importante para evitar problemas con la visibilidad de Bootstrap */
+      width: 100%; /* Ocupa todo el ancho */
+      box-shadow: none; /* Quita la sombra en mobile */
+      border: none; /* Quita el borde en mobile */
+      padding: 0; /* Quita el padding en mobile */
+      margin-top: 0.5rem; /* Espacio superior */
+  }
+
+  .mega-menu .row {
+      display: block; /* Cambia a block para apilar las columnas */
+  }
+
+  .mega-menu .col-md-4 {
+      width: 100%; /* Ocupa todo el ancho en mobile */
+      min-width: auto; /* Permite el ancho automatico */
+      margin-bottom: 0.5rem; /* Reduce el espacio entre columnas en mobile */
+  }
+}
+
+/* Main contenido */
+.entrenadores-container {
+  text-align: center;
+  padding: 2rem;
+}
+
+.entrenadores-container h1 {
+  color: #333;
+  /* Transición suave para el color */
+  transition: color 0.3s ease;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Tarjeta Flip */
+.card-flip {
+  width: 300px;
+  height: 400px;
+  perspective: 1000px; /* Necesario para el efecto 3D */
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* Transición para la rotación */
+  transition: transform 0.8s ease-in-out;
+  /* Necesario para que los elementos hijos se rendericen en el espacio 3D */
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card-flip:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* Oculta la parte trasera del elemento cuando no está visible */
+  backface-visibility: hidden;
+  border-radius: 10px;
+  /* Asegura que el contenido no se salga de los bordes */
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  /* Transición suave para el fondo, color y sombra */
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra verticalmente por defecto */
+  align-items: center; /* Centra horizontalmente */
+}
+
+.card-front img {
+  width: 70%;
+  height: 70%;
+  object-fit: cover;
+}
+
+.card-front h3 {
+  padding: 1rem;
+  /* Transición suave para el color */
+  transition: color 0.3s ease;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  padding: 1rem;
+  justify-content: space-around; /* Espacia los elementos internos verticalmente */
+  align-items: stretch; /* Permite que los elementos hijos se estiren horizontalmente */
+}
+
+.card-back h3 {
+  /* Transición suave para el color */
+  transition: color 0.3s ease;
+  text-align: center;
+}
+
+.card-back p {
+  /* Transición suave para el color */
+  transition: color 0.3s ease;
+  text-align: center;
+}
+
+/* Barras de habilidad */
+.habilidad .barra {
+  background-color: #e0e0e0; /* Color de fondo de la barra */
+  border-radius: 5px;
+  height: 20px; /* Ajusta la altura si es necesario */
+  margin-bottom: 10px; /* Espacio entre las habilidades */
+  width: 100%; /* Haz que la barra ocupe todo el ancho de su contenedor */
+  display: block; /* Asegura que sea un bloque para controlar el ancho */
+}
+
+.habilidad .barra .progress {
+  height: 20px; /* Asegúrate de que el progress tenga la misma altura */
+  border-radius: 5px;
+  overflow: hidden; /* Para que el borde redondeado se vea correctamente */
+}
+
+.habilidad .barra .progress-bar {
+  height: 20px; /* Asegúrate de que la barra de progreso tenga la misma altura */
+  border-radius: 5px;
+  /* El ancho se establece dinámicamente con JavaScript */
+}
+
+.relleno {
+  height: 100%;
+  background: #f90;
+  width: 0; /* Inicialmente la barra está vacía */
+  /* La animación se define en el JavaScript, no es necesario aquí */
+  /* animation: expand 2s ease forwards; */
+  /* Transición suave para el fondo */
+  transition: background-color 0.3s ease;
+}
+
+/* Rating con estrellas */
+.rating-container {
+  text-align: center; /* Centrar el rating */
+  margin-top: 1rem;
+  width: 100%; /* Asegura que el contenedor del rating ocupe todo el ancho */
+}
+
+.rating {
+  display: inline-block;
+  direction: rtl; /* Para que las estrellas se alineen a la derecha visualmente */
+  position: relative;
+  font-size: 1.5rem;
+  color: #ddd; /* Color de las estrellas no seleccionadas */
+  /* Transición suave para el color */
+  transition: color 0.3s ease;
+}
+
+.rating input {
+  display: none; /* Oculta los radio buttons */
+}
+
+.rating label {
+  position: relative;
+  width: 1em;
+  font-size: 1.5rem;
+  color: #ddd; /* Asegura que el color inicial sea el correcto */
+  cursor: pointer;
+}
+
+.rating label:before {
+  content: "\2605"; /* Carácter Unicode para la estrella */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.rating input:checked ~ label {
+  color: #ffc107; /* Color de las estrellas seleccionadas */
+}
+
+.rating label:hover,
+.rating label:hover ~ label {
+  color: #ffc107; /* Color al pasar el mouse */
+}
+
+/* FOOTER */
+footer {
+  background-color: #eee;
+  color: #000;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  /* Transición suave para el fondo y el color */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+footer p {
+  margin-top: 0.5rem;
+}
+
+
+/* REDES */
+.redes {
+  background-color: #eee;
+  color: #000;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  /* Transición suave para el fondo y el color */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.redes a {
+  color: #000;
+  text-decoration: none;
+  font-size: 1.1rem;
+  /* Transición suave para el color */
+  transition: color 0.3s ease;
+}
+
+.redes a:hover,
+.redes a:focus {
+  color: #333;
+}
+
+/* DARK MODE STYLES */
+body.dark-mode {
+  background-color: #000;
+  color: #eee;
+}
+
+/* Navbar Dark Mode */
+body.dark-mode header,
+body.dark-mode .navbar.navbar-dark,
+body.dark-mode .navbar.bg-dark {
+  background-color: #000 !important; /* Override Bootstrap's background */
+}
+
+body.dark-mode .navbar-brand,
+body.dark-mode .navbar-nav .nav-link,
+body.dark-mode .navbar-nav .nav-link.btn-link {
+  color: #fff;
+}
+
+body.dark-mode .navbar-nav .nav-link:hover,
+body.dark-mode .navbar-nav .nav-link:focus,
+body.dark-mode .navbar-nav .nav-link.btn-link:hover,
+body.dark-mode .navbar-nav .nav-link.btn-link:focus {
+  background-color: #495057;
+  color: #fff;
+}
+
+body.dark-mode .mega-menu {
+  background-color: #000;
+  border-color: #000;
+  color: #fff;
+}
+
+body.dark-mode .mega-menu h5,
+body.dark-mode .mega-menu a {
+  color: #fff;
+}
+
+body.dark-mode .dropdown-menu {
+  background-color: #000;
+  border-color: #495057;
+}
+
+body.dark-mode .dropdown-item {
+  color: #fff;
+}
+
+body.dark-mode .dropdown-item:hover,
+body.dark-mode .dropdown-item:focus {
+  background-color: #495057;
+  color: #fff;
+}
+
+.entrenadores-container.dark-mode-section {
+  color: #eee;
+}
+
+.entrenadores-container.dark-mode-section h1.dark-mode-heading {
+  color: #eee;
+}
+
+.card-front.dark-mode-card-front,
+.card-back.dark-mode-card-back {
+  background-color: #333;
+  color: #eee;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.card-front.dark-mode-card-front h3,
+.card-back.dark-mode-card-back h3,
+.card-back.dark-mode-card-back p {
+  color: #eee;
+}
+
+.habilidad.dark-mode-habilidad label.dark-mode-label {
+  color: #eee;
+}
+
+.barra.dark-mode-barra {
+  background-color: #555;
+}
+
+.relleno.dark-mode-relleno {
+  background-color: #f90; /* El color de relleno se mantiene */
+}
+
+.rating-container.dark-mode-rating-container .rating.dark-mode-rating {
+  color: #777;
+}
+
+.rating-container.dark-mode-rating-container .rating.dark-mode-rating input:checked ~ label,
+.rating-container.dark-mode-rating-container .rating.dark-mode-rating label:hover,
+.rating-container.dark-mode-rating-container .rating.dark-mode-rating label:hover ~ label {
+  color: gold;
+}
+
+.rating-container.dark-mode-rating-container p.dark-mode-text {
+  color: #eee;
+}
+
+footer.dark-mode-footer {
+  background-color: #000;
+  color: #eee;
+}
+
+.redes.dark-mode-section {
+  background-color: #000;
+  color: #eee;
+}
+
+.redes.dark-mode-section a.dark-mode-link {
+  color: #eee;
+}
+
+.redes.dark-mode-section a.dark-mode-link:hover {
+  color: #ddd;
+}
+
+.menu-links.dark-mode #theme-toggle.dark-mode-button {
+  color: #eee;
+  background-color: transparent;
+  border: none;
+}
+
+.menu-links.dark-mode #theme-toggle.dark-mode-button:hover,
+.menu-links.dark-mode #theme-toggle.dark-mode-button:focus {
+  background-color: #333;
+}

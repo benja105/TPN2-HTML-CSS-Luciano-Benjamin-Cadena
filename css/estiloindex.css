@@ -1,0 +1,634 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #fff;
+    color: #000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* HEADER */
+header {
+    background-color: #f8f9fa;
+    color: #000;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar {
+    padding: 0;
+}
+
+.container-fluid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.navbar-brand {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: #000;
+}
+
+.navbar-nav {
+    align-items: center;
+}
+
+.nav-item {
+    margin: 0;
+}
+
+.nav-link {
+    color: #000;
+    text-decoration: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    background-color: #eee;
+    color: #000;
+}
+
+.btn-link {
+    background: none;
+    border: none;
+    color: #000;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-link:hover,
+.btn-link:focus {
+    background-color: #eee;
+    color: #000;
+}
+
+/* Mega Menú Desplegable */
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    display: none;
+    /* Oculto por defecto - Gestionado por Bootstrap */
+    padding: 1rem;
+    z-index: 1000;
+}
+
+.mega-menu .row {
+    display: flex;
+    flex-wrap: wrap;
+    /* Asegura que las columnas se envuelvan en pantallas pequeñas */
+}
+
+.mega-menu .col-md-4 {
+    flex: 1;
+    /* Distribuye el espacio equitativamente entre las columnas */
+    min-width: 200px;
+    /* Evita que las columnas se estrechen demasiado */
+    margin-bottom: 1rem;
+    /* Añade espacio entre las columnas en pantallas pequeñas */
+}
+
+.mega-menu h5 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.mega-menu a {
+    display: block;
+    padding: 0.25rem 0;
+    color: #000;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out;
+}
+
+.mega-menu a:hover,
+.mega-menu a:focus {
+    color: #0a58ca;
+}
+
+/* Media Queries (Ajustes Adicionales) */
+@media (max-width: 768px) {
+
+    .mega-menu {
+        position: static;
+        /* Cambia a static para fluir con el contenido */
+        display: none;
+        /* Asegura que se oculte en mobile inicialmente */
+        opacity: 1;
+        /* Asegura que no haya problemas con opacidad de bootstrap */
+        visibility: visible;
+        /* Asegura que no haya problemas con visibilidad de bootstrap */
+        width: 100%;
+        /* Ocupa todo el ancho */
+        box-shadow: none;
+        /* Quita la sombra en mobile */
+        border: none;
+        /* Quita el borde en mobile */
+        padding: 0;
+        /* Quita el padding en mobile */
+        margin-top: 0.5rem;
+        /* Espacio superior */
+    }
+
+    .mega-menu .row {
+        display: block;
+        /* Cambia a block para apilar las columnas */
+    }
+
+    .mega-menu .col-md-4 {
+        width: 100%;
+        /* Ocupa todo el ancho en mobile */
+        min-width: auto;
+        /* Permite el ancho automatico */
+        margin-bottom: 0.5rem;
+        /* Reduce el espacio entre columnas en mobile */
+    }
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 80px);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1;
+    filter: brightness(0.3);
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border-radius: 10px;
+    z-index: 2;
+    animation: fadeInText 1s ease-in-out;
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.clases-destacadas {
+    padding: 3rem 1rem;
+    text-align: center;
+    background-color: #fff;
+    color: #000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.clases-destacadas h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: #eee;
+    color: #333;
+    padding: 1.5rem;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.card:hover,
+.card:focus-within {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* CONTADOR */
+.contador {
+    background-color: #eee;
+    color: #000;
+    padding: 3rem 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contador img.hero {
+    width: 120px;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contador h2.contador-num {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    animation: countUp 1.5s ease-out;
+}
+
+@keyframes countUp {
+    from {
+        opacity: 0.7;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contador h2 {
+    font-size: 1.5rem;
+}
+
+/* TESTIMONIOS */
+.testimonios {
+    background-color: #fff;
+    color: #333;
+    padding: 3rem 1rem;
+    text-align: center;
+    position: relative;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.testimonios h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.testimonio {
+    display: none;
+    font-style: italic;
+    padding: 1rem;
+    margin: 0 auto;
+    max-width: 700px;
+    animation: fadeTestimonio 0.5s ease-in-out;
+}
+
+@keyframes fadeTestimonio {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+input[name="carrusel"] {
+    display: none;
+}
+
+input#t1:checked~#testimonio1,
+input#t2:checked~#testimonio2,
+input#t3:checked~#testimonio3 {
+    display: block;
+}
+
+.nav-testimonios {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.nav-testimonios label {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: #888;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.nav-testimonios label:hover,
+.nav-testimonios label:focus {
+    background-color: #555;
+}
+
+/* NEWSLETTER */
+.newsletter {
+    background-color: #eee;
+    color: #000;
+    padding: 3rem 1rem;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.newsletter h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.newsletter form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.newsletter label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.newsletter input[type="email"] {
+    padding: 0.75rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    color: #333;
+}
+
+.newsletter button {
+    padding: 0.75rem 1.5rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter button:hover,
+.newsletter button:focus {
+    background-color: #333;
+}
+
+/* REDES */
+.redes {
+    background-color: #eee;
+    color: #000;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.redes a {
+    color: #000;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.redes a:hover,
+.redes a:focus {
+    color: #333;
+}
+
+/* MAPA */
+.mapa h2 {
+    color: #000;
+}
+
+.mapa {
+    padding: 1rem;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.mapa iframe {
+    width: 100%;
+    height: 300px;
+    border: 1px solid #ccc;
+}
+
+/* FOOTER */
+footer {
+    background-color: #000;
+    color: #eee;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+footer p {
+    margin-top: 0.5rem;
+}
+
+/* ESTILOS DEL MODO OSCURO */
+body.dark-mode {
+    background-color: #000;
+    color: #eee;
+}
+
+/* Navbar Modo Oscuro */
+body.dark-mode header,
+body.dark-mode .navbar.navbar-dark,
+body.dark-mode .navbar.bg-dark {
+    background-color: #000 !important;
+    /* Override el fondo de Bootstrap */
+}
+
+body.dark-mode .navbar-brand,
+body.dark-mode .navbar-nav .nav-link,
+body.dark-mode .navbar-nav .nav-link.btn-link {
+    color: #fff;
+}
+
+body.dark-mode .navbar-nav .nav-link:hover,
+body.dark-mode .navbar-nav .nav-link:focus,
+body.dark-mode .navbar-nav .nav-link.btn-link:hover,
+body.dark-mode .navbar-nav .nav-link.btn-link:focus {
+    background-color: #495057;
+    color: #fff;
+}
+
+body.dark-mode .mega-menu {
+    background-color: #000;
+    border-color: #000;
+    color: #fff;
+}
+
+body.dark-mode .mega-menu h5,
+body.dark-mode .mega-menu a {
+    color: #fff;
+}
+
+body.dark-mode .dropdown-menu {
+    background-color: #000;
+    border-color: #495057;
+}
+
+body.dark-mode .dropdown-item {
+    color: #fff;
+}
+
+body.dark-mode .dropdown-item:hover,
+body.dark-mode .dropdown-item:focus {
+    background-color: #495057;
+    color: #fff;
+}
+
+.dark-mode .clases-destacadas {
+    background-color: #000;
+    color: #fff;
+}
+
+.dark-mode .card {
+    background-color: #333;
+    color: #eee;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.08);
+}
+
+.dark-mode .card:hover,
+.dark-mode .card:focus-within {
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.16);
+}
+
+.dark-mode .contador {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode .contador img.hero {
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .testimonios {
+    background-color: #000;
+    color: #eee;
+}
+
+.dark-mode .nav-testimonios label {
+    background-color: #555;
+}
+
+.dark-mode .nav-testimonios label:hover,
+.dark-mode .nav-testimonios label:focus {
+    background-color: #888;
+}
+
+.dark-mode .newsletter {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode .newsletter input[type="email"] {
+    background-color: #000;
+    color: #fff;
+    border-color: #555;
+}
+
+.dark-mode .newsletter button {
+    background-color: #fff;
+    color: #000;
+}
+
+.dark-mode .newsletter button:hover,
+.dark-mode .newsletter button:focus {
+    background-color: #eee;
+}
+
+.dark-mode .redes {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode .redes a {
+    color: #fff;
+}
+
+.dark-mode .redes a:hover,
+.dark-mode .redes a:focus {
+    color: #ddd;
+}
+
+.dark-mode .mapa h2 {
+    color: #eee;
+}
+
+.dark-mode .mapa {
+    background-color: #000;
+}
+
+.dark-mode .mapa iframe {
+    border-color: #555;
+}
+
+.dark-mode footer {
+    background-color: #333;
+    color: #fff;
+}

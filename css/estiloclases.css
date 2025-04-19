@@ -1,0 +1,544 @@
+/* css/estiloclases.css */
+
+/* Reset básico y box-sizing */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #fff;
+    color: #000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* HEADER */
+header {
+  background-color: #f8f9fa;
+  color: #000;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar {
+  padding: 0;
+}
+
+.container-fluid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.navbar-brand {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #000;
+}
+
+.navbar-nav {
+  align-items: center;
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-link {
+  color: #000;
+  text-decoration: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  background-color: #eee;
+  color: #000;
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: #000;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-link:hover,
+.btn-link:focus {
+  background-color: #eee;
+  color: #000;
+}
+
+/* Mega Menú Desplegable */
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  display: none;
+  /* Oculto por defecto - Gestionado por Bootstrap */
+  padding: 1rem;
+  z-index: 1000;
+}
+
+.mega-menu .row {
+  display: flex;
+  flex-wrap: wrap;
+  /* Asegura que las columnas se envuelvan en pantallas pequeñas */
+}
+
+.mega-menu .col-md-4 {
+  flex: 1;
+  /* Distribuye el espacio equitativamente entre las columnas */
+  min-width: 200px;
+  /* Evita que las columnas se estrechen demasiado */
+  margin-bottom: 1rem;
+  /* Añade espacio entre las columnas en pantallas pequeñas */
+}
+
+.mega-menu h5 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.mega-menu a {
+  display: block;
+  padding: 0.25rem 0;
+  color: #000;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out;
+}
+
+.mega-menu a:hover,
+.mega-menu a:focus {
+  color: #0a58ca;
+}
+
+/* Media Queries (Ajustes Adicionales) */
+@media (max-width: 768px) {
+
+  .mega-menu {
+      position: static;
+      /* Cambia a static para fluir con el contenido */
+      display: none;
+      /* Asegura que se oculte en mobile inicialmente */
+      opacity: 1;
+      /* Asegura que no haya problemas con opacidad de bootstrap */
+      visibility: visible;
+      /* Asegura que no haya problemas con visibilidad de bootstrap */
+      width: 100%;
+      /* Ocupa todo el ancho */
+      box-shadow: none;
+      /* Quita la sombra en mobile */
+      border: none;
+      /* Quita el borde en mobile */
+      padding: 0;
+      /* Quita el padding en mobile */
+      margin-top: 0.5rem;
+      /* Espacio superior */
+  }
+
+  .mega-menu .row {
+      display: block;
+      /* Cambia a block para apilar las columnas */
+  }
+
+  .mega-menu .col-md-4 {
+      width: 100%;
+      /* Ocupa todo el ancho en mobile */
+      min-width: auto;
+      /* Permite el ancho automatico */
+      margin-bottom: 0.5rem;
+      /* Reduce el espacio entre columnas en mobile */
+  }
+}
+
+/* Filtros */
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+    background-color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    flex-wrap: wrap; /* Permite que los filtros se envuelvan en pantallas pequeñas */
+}
+
+.filters .form-check-input {
+    display: none; /* Ocultado en el HTML */
+}
+
+.filters .form-check-label {
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 0.5rem 1rem;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    font-weight: normal;
+    border: 1px solid transparent;
+    margin-bottom: 0.5rem; /* Espacio entre los filtros en pantallas pequeñas */
+}
+
+.filters .form-check-input:checked + .form-check-label {
+    background-color: #007bff; /* Azul primario de Bootstrap */
+    color: #fff;
+    border-color: #007bff;
+}
+
+.filters .form-check-label:hover {
+    border-color: #ced4da;
+}
+
+/* Galería tipo masonry */
+.masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #f8f9fa;
+    transition: background-color 0.3s ease;
+}
+
+.card-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background-color: #fff; /* Color de fondo de la tarjeta */
+    color: #333; /* Color de texto de la tarjeta */
+}
+
+.card-wrapper:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+    width: 100%;
+    display: block;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.card-wrapper:hover .card-img-top {
+    opacity: 0.8;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 0.25rem;
+}
+
+.card-wrapper:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem; /* Ajustar tamaño de fuente para pantallas más pequeñas */
+    text-align: center;
+}
+
+.overlay p {
+    font-size: 0.9rem; /* Ajustar tamaño de fuente para pantallas más pequeñas */
+    text-align: center;
+    padding: 0 1rem;
+}
+
+/* Tabla de horarios */
+.horarios {
+    padding: 2rem 1rem; /* Reducir el padding horizontal en pantallas pequeñas */
+    background-color: #f8f9fa;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: #333;
+}
+
+.horarios h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem; /* Ajustar tamaño de fuente para pantallas más pequeñas */
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: #333;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-color: #000;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    font-size: 0.9rem; /* Reducir tamaño de fuente de la tabla */
+}
+
+.table th,
+.table td {
+    padding: 0.5rem; /* Reducir el padding de las celdas de la tabla */
+    border: 1px solid #dee2e6;
+    text-align: center;
+    transition: border-color 0.3s ease, color 0.3s ease;
+    white-space: nowrap; /* Evitar el salto de línea en el texto de la tabla */
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+    background-color: #e9ecef;
+    color: #495057;
+}
+
+.table tbody + tbody {
+    border-top: 2px solid #dee2e6;
+}
+
+.table-bordered {
+    border: 1px solid #dee2e6;
+}
+
+.table-bordered th,
+.table-bordered td {
+    border: 1px solid #dee2e6;
+}
+
+.table-bordered thead th,
+.table-bordered thead td {
+    border-bottom-width: 2px;
+}
+
+/* FOOTER */
+footer {
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+footer p {
+    margin-top: 0.5rem;
+    margin-bottom: 0; /* Elimina el margen inferior predeterminado */
+}
+
+/* REDES */
+footer .redes {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Reducir el espacio entre los iconos de redes sociales */
+    margin-bottom: 1rem;
+    flex-wrap: wrap; /* Permite que los enlaces se envuelvan en pantallas pequeñas */
+}
+
+footer .redes a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem; /* Reducir el tamaño de la fuente de los enlaces de redes sociales */
+    transition: color 0.3s ease;
+}
+
+footer .redes a:hover,
+footer .redes a:focus {
+    color: #f8f9fa;
+    text-decoration: underline; /* Añade un subrayado al hacer hover */
+}
+
+/* Media queries para la responsividad de la galería */
+@media (max-width: 992px) {
+    .masonry-grid {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .masonry-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    }
+}
+
+/* ESTILOS DEL MODO OSCURO */
+body.dark-mode {
+    background-color: #000;
+    color: #eee;
+}
+
+/* Navbar Modo Oscuro */
+body.dark-mode header,
+body.dark-mode .navbar.navbar-dark,
+body.dark-mode .navbar.bg-dark {
+    background-color: #000 !important; /* Override Bootstrap's background */
+}
+
+body.dark-mode .navbar-brand,
+body.dark-mode .navbar-nav .nav-link,
+body.dark-mode .navbar-nav .nav-link.btn-link {
+    color: #fff;
+}
+
+body.dark-mode .navbar-nav .nav-link:hover,
+body.dark-mode .navbar-nav .nav-link:focus,
+body.dark-mode .navbar-nav .nav-link.btn-link:hover,
+body.dark-mode .navbar-nav .nav-link.btn-link:focus {
+    background-color: #495057;
+    color: #fff;
+}
+
+body.dark-mode .mega-menu {
+    background-color: #000;
+    border-color: #000;
+    color: #fff;
+}
+
+body.dark-mode .mega-menu h5,
+body.dark-mode .mega-menu a {
+    color: #fff;
+}
+
+body.dark-mode .dropdown-menu {
+    background-color: #000;
+    border-color: #495057;
+}
+
+body.dark-mode .dropdown-item {
+    color: #fff;
+}
+
+body.dark-mode .dropdown-item:hover,
+body.dark-mode .dropdown-item:focus {
+    background-color: #495057;
+    color: #fff;
+}
+
+/* Dark Mode para la sección de filtros */
+body.dark-mode .filters{
+    background-color: #333;
+}
+
+body.dark-mode .contenido-filtrado {
+    background-color: #333;
+    color: #eee;
+}
+
+body.dark-mode .filters .form-check-label {
+    color: #eee;
+    background-color: #000;
+    border-color: #555;
+}
+
+body.dark-mode .filters .form-check-input:checked + .form-check-label {
+    background-color: #007bff; /* Mantener el azul primario para destacar la selección */
+    color: #fff;
+    border-color: #007bff;
+}
+
+/* Dark Mode para la sección de clases (galería) */
+body.dark-mode .galeria {
+    background-color: #000;
+}
+
+body.dark-mode .card-wrapper .card {
+    background-color: #333;
+    color: #eee;
+    box-shadow: 0 0.125rem 0.25rem rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .card-wrapper .card:hover {
+    box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.15);
+}
+
+body.dark-mode .card-wrapper .card .overlay {
+    background: rgba(0, 0, 0, 0.8);
+    color: #eee;
+}
+
+/* Dark Mode para la sección de horarios */
+body.dark-mode .horarios {
+    background-color: #222;
+    color: #eee;
+}
+
+body.dark-mode .horarios h2 {
+    color: #eee;
+    font-size: 1.5rem; /* Ajustar tamaño de fuente para consistencia */
+}
+
+body.dark-mode .horarios .table {
+    color: #eee;
+    border-color: #eee;
+    font-size: 0.9rem; /* Mantener el tamaño de fuente */
+}
+
+body.dark-mode .horarios .table thead th {
+    background-color: #333;
+    color: #eee;
+    border-color: #555;
+}
+
+body.dark-mode .horarios .table tbody td {
+    border-color: #555;
+    background-color: #000;
+    color: #eee;
+}
+
+/* Dark Mode para el footer y redes sociales */
+body.dark-mode footer.bg-dark {
+    background-color: #000 !important;
+    color: #eee !important;
+}
+
+body.dark-mode .redes {
+    background-color: #000;
+    color: #eee;
+    gap: 1rem; /* Mantener el espacio */
+}
+
+body.dark-mode .redes a.text-light {
+    color: #eee !important;
+}
+
+body.dark-mode .redes a.text-light:hover,
+body.dark-mode .redes a.text-light:focus {
+    color: #ddd !important;
+}

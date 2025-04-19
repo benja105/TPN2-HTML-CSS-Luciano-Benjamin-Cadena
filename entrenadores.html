@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Entrenadores - Fracture</title>
+    <link rel="stylesheet" href="css/estiloentrenadores.css" />
+    <link rel="stylesheet" href="css/animaciones.css">
+    <link rel="icon" href="img/fracture.ico" type="image/icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <header class="bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">FRACTURE</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="clases.html">Clases</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="entrenadores.html">Entrenadores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="precios.html">Planes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item dropdown mega-menu-item">
+                            <a class="nav-link dropdown-toggle" href="#" id="megaMenuDropdown" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                    Más
+                            </a>
+                            <ul class="dropdown-menu mega-menu" aria-labelledby="megaMenuDropdown">
+                                 <div class="row">
+                                     <div class="col-md-4">
+                                         <h5>Servicios</h5>
+                                         <a class="dropdown-item" href="#">Nutrición</a>
+                                         <a class="dropdown-item" href="#">Fisioterapia</a>
+                                         <a class="dropdown-item" href="#">Tienda</a>
+                                     </div>
+                                     <div class="col-md-4">
+                                         <h5>Comunidad</h5>
+                                         <a class="dropdown-item" href="#">Eventos</a>
+                                         <a class="dropdown-item" href="#">Foro</a>
+                                         <a class="dropdown-item" href="#">Redes Sociales</a>
+                                     </div>
+                                     <div class="col-md-4">
+                                         <h5>Acerca de</h5>
+                                         <a class="dropdown-item" href="#">Nosotros</a>
+                                         <a class="dropdown-item" href="#">Historia</a>
+                                         <a class="dropdown-item" href="#">Valores</a>
+                                     </div>
+                                 </div>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <button id="theme-toggle" class="nav-link btn btn-link">Modo Oscuro</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="entrenadores-container">
+        <h1>Nuestros Entrenadores</h1>
+
+        <div class="cards-container">
+            <div class="card-flip">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="img/entrenador1.jpg" alt="Entrenador 1">
+                        <h3>Lucas</h3>
+                    </div>
+                    <div class="card-back">
+                        <h3>Lucas - Musculación</h3>
+                        <p>Especialista en fuerza y volumen muscular.</p>
+
+                        <div class="habilidad">
+                            <label>Fuerza</label>
+                            <div class="barra">
+                                <div class="progress">
+                                    <div class="progress-bar bg-success relleno fuerza90" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-skill-level="90"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="habilidad">
+                            <label>Flexibilidad</label>
+                            <div class="barra">
+                                <div class="progress">
+                                    <div class="progress-bar bg-info relleno flex80" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-skill-level="80"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="rating-container">
+                            <label class="form-label">Calificación</label>
+                            <div class="rating">
+                                <input type="radio" id="star5_lucas" name="rating_lucas" value="5" /><label class="star" for="star5_lucas" title="Excelente"></label>
+                                <input type="radio" id="star4_lucas" name="rating_lucas" value="4" /><label class="star" for="star4_lucas" title="Muy bueno"></label>
+                                <input type="radio" id="star3_lucas" name="rating_lucas" value="3" /><label class="star" for="star3_lucas" title="Bueno"></label>
+                                <input type="radio" id="star2_lucas" name="rating_lucas" value="2" /><label class="star" for="star2_lucas" title="Regular"></label>
+                                <input type="radio" id="star1_lucas" name="rating_lucas" value="1" /><label class="star" for="star1_lucas" title="Malo"></label>
+                            </div>
+                            <p id="rating-value-lucas" class="mt-2">Selecciona una calificación.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-flip">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="img/entrenador2.jpg" alt="Camila">
+                        <h3>Camila</h3>
+                    </div>
+                    <div class="card-back">
+                        <h3>Camila - Yoga</h3>
+                        <p>Especialista en yoga y movilidad consciente.</p>
+
+                        <div class="habilidad">
+                            <label>Flexibilidad</label>
+                            <div class="barra">
+                                <div class="progress">
+                                    <div class="progress-bar bg-success relleno flex95" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-skill-level="95"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="habilidad">
+                            <label>Resistencia</label>
+                            <div class="barra">
+                                <div class="progress">
+                                    <div class="progress-bar bg-info relleno res75" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-skill-level="75"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="rating-container">
+                            <label class="form-label">Calificación</label>
+                            <div class="rating">
+                                <input type="radio" id="star5_camila" name="rating_camila" value="5" /><label class="star" for="star5_camila" title="Excelente"></label>
+                                <input type="radio" id="star4_camila" name="rating_camila" value="4" /><label class="star" for="star4_camila" title="Muy bueno"></label>
+                                <input type="radio" id="star3_camila" name="rating_camila" value="3" /><label class="star" for="star3_camila" title="Bueno"></label>
+                                <input type="radio" id="star2_camila" name="rating_camila" value="2" /><label class="star" for="star2_camila" title="Regular"></label>
+                                <input type="radio" id="star1_camila" name="rating_camila" value="1" /><label class="star" for="star1_camila" title="Malo"></label>
+                            </div>
+                            <p id="rating-value-camila" class="mt-2">Selecciona una calificación.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-flip">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="img/entrenador3.jpg" alt="Diego">
+                        <h3>Diego</h3>
+                    </div>
+                    <div class="card-back">
+                        <h3>Diego - Crossfit</h3>
+                        <p>Entrenador funcional y de alto rendimiento.</p>
+
+                        <div class="habilidad">
+                            <label>Potencia</label>
+                            <div class="barra">
+                                <div class="progress">
+                                    <div class="progress-bar bg-success relleno pot85" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-skill-level="85"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="habilidad">
+                            <label>Velocidad</label>
+                            <div class="barra">
+                                <div class="progress">
+                                    <div class="progress-bar bg-info relleno vel80" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-skill-level="80"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="rating-container">
+                            <label class="form-label">Calificación</label>
+                            <div class="rating">
+                                <input type="radio" id="star5_diego" name="rating_diego" value="5" /><label class="star" for="star5_diego" title="Excelente"></label>
+                                <input type="radio" id="star4_diego" name="rating_diego" value="4" /><label class="star" for="star4_diego" title="Muy bueno"></label>
+                                <input type="radio" id="star3_diego" name="rating_diego" value="3" /><label class="star" for="star3_diego" title="Bueno"></label>
+                                <input type="radio" id="star2_diego" name="rating_diego" value="2" /><label class="star" for="star2_diego" title="Regular"></label>
+                                <input type="radio" id="star1_diego" name="rating_diego" value="1" /><label class="star" for="star1_diego" title="Malo"></label>
+                            </div>
+                            <p id="rating-value-diego" class="mt-2">Selecciona una calificación.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="redes">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">YouTube</a>
+        </div>
+        <p>&copy; 2025 Fracture - Todos los derechos reservados</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/entrenadores.js"></script>
+</body>
+</html>

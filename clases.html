@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Clases - Fracture</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estiloclases.css" />
+    <link rel="stylesheet" href="css/animaciones.css" />
+    <link rel="icon" href="img/fracture.ico" type="image/icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">FRACTURE</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="clases.html">Clases</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="entrenadores.html">Entrenadores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="precios.html">Planes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item dropdown mega-menu-item">
+                            <a class="nav-link dropdown-toggle" href="#" id="megaMenuDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Más
+                            </a>
+                            <ul class="dropdown-menu mega-menu" aria-labelledby="megaMenuDropdown">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h5>Servicios</h5>
+                                        <a class="dropdown-item" href="#">Nutrición</a>
+                                        <a class="dropdown-item" href="#">Fisioterapia</a>
+                                        <a class="dropdown-item" href="#">Tienda</a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h5>Comunidad</h5>
+                                        <a class="dropdown-item" href="#">Eventos</a>
+                                        <a class="dropdown-item" href="#">Foro</a>
+                                        <a class="dropdown-item" href="#">Redes Sociales</a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h5>Acerca de</h5>
+                                        <a class="dropdown-item" href="#">Nosotros</a>
+                                        <a class="dropdown-item" href="#">Historia</a>
+                                        <a class="dropdown-item" href="#">Valores</a>
+
+                                    </div>
+                                </div>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <button id="theme-toggle" class="nav-link btn btn-link">Modo Oscuro</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="contenido-filtrado py-5">
+        <div class="container">
+            <div class="filters mb-4">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input filter-input" type="radio" name="filtro" id="todos" value="todos" checked>
+                    <label class="form-check-label" for="todos">Todas</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input filter-input" type="radio" name="filtro" id="musculacion" value="musculacion">
+                    <label class="form-check-label" for="musculacion">Musculación</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input filter-input" type="radio" name="filtro" id="crossfit" value="crossfit">
+                    <label class="form-check-label" for="crossfit">CrossFit</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input filter-input" type="radio" name="filtro" id="yoga" value="yoga">
+                    <label class="form-check-label" for="yoga">Yoga</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input filter-input" type="radio" name="filtro" id="spinning" value="spinning">
+                    <label class="form-check-label" for="spinning">Spinning</label>
+                </div>
+            </div>
+
+            <main class="galeria masonry-grid">
+                <div class="card-wrapper musculacion card">
+                    <img src="img/musculacion.jpg" alt="Musculación" class="card-img-top">
+                    <div class="overlay">
+                        <h3>Musculación</h3>
+                        <p>Fuerza y desarrollo muscular.</p>
+                    </div>
+                </div>
+                <div class="card-wrapper crossfit card">
+                    <img src="img/crossfit.jpg" alt="CrossFit" class="card-img-top">
+                    <div class="overlay">
+                        <h3>CrossFit</h3>
+                        <p>Alta intensidad funcional.</p>
+                    </div>
+                </div>
+                <div class="card-wrapper yoga card">
+                    <img src="img/yoga.jpg" alt="Yoga" class="card-img-top">
+                    <div class="overlay">
+                        <h3>Yoga</h3>
+                        <p>Equilibrio físico y mental.</p>
+                    </div>
+                </div>
+                <div class="card-wrapper spinning card">
+                    <img src="img/spinning.jpg" alt="Spinning" class="card-img-top">
+                    <div class="overlay">
+                        <h3>Spinning</h3>
+                        <p>Cardio en bicicleta fija.</p>
+                    </div>
+                </div>
+                <div class="card-wrapper musculacion card">
+                    <img src="img/musculacion.jpg" alt="Musculación" class="card-img-top">
+                    <div class="overlay">
+                        <h3>Musculación</h3>
+                        <p>Más detalles sobre musculación.</p>
+                    </div>
+                </div>
+                <div class="card-wrapper crossfit card">
+                    <img src="img/crossfit.jpg" alt="CrossFit" class="card-img-top">
+                    <div class="overlay">
+                        <h3>CrossFit</h3>
+                        <p>Información adicional de CrossFit.</p>
+                    </div>
+                </div>
+                <div class="card-wrapper yoga card">
+                    <img src="img/yoga.jpg" alt="Yoga" class="card-img-top">
+                    <div class="overlay">
+                        <h3>Yoga</h3>
+                        <p>Beneficios y tipos de yoga.</p>
+                    </div>
+                </div>
+                <div class="card-wrapper spinning card">
+                    <img src="img/spinning.jpg" alt="Spinning" class="card-img-top">
+                    <div class="overlay">
+                        <h3>Spinning</h3>
+                        <p>Consejos para tus clases de spinning.</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </section>
+
+    <section class="horarios py-5">
+        <div class="container">
+            <h2>Horarios Semanales</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Clase</th>
+                            <th>Lunes</th>
+                            <th>Martes</th>
+                            <th>Miércoles</th>
+                            <th>Jueves</th>
+                            <th>Viernes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="musculacion">
+                            <td>Musculación</td>
+                            <td>10:00</td>
+                            <td>10:00</td>
+                            <td>10:00</td>
+                            <td>10:00</td>
+                            <td>10:00</td>
+                        </tr>
+                        <tr class="crossfit">
+                            <td>CrossFit</td>
+                            <td>18:00</td>
+                            <td>18:00</td>
+                            <td>18:00</td>
+                            <td>18:00</td>
+                            <td>18:00</td>
+                        </tr>
+                        <tr class="yoga">
+                            <td>Yoga</td>
+                            <td>08:00</td>
+                            <td></td>
+                            <td>08:00</td>
+                            <td></td>
+                            <td>08:00</td>
+                        </tr>
+                        <tr class="spinning">
+                            <td>Spinning</td>
+                            <td>19:00</td>
+                            <td>19:00</td>
+                            <td>19:00</td>
+                            <td>19:00</td>
+                            <td>19:00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-3">
+        <div class="container">
+            <div class="redes text-center mb-2">
+                <a href="#" class="text-light mr-3">Facebook</a>
+                <a href="#" class="text-light mr-3">Instagram</a>
+                <a href="#" class="text-light">YouTube</a>
+            </div>
+            <p class="text-center mb-0">&copy; 2025 Fracture - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/clases.js"></script>
+</body>
+</html>

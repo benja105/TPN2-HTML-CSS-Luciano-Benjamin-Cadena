@@ -1,0 +1,448 @@
+/* Estilos generales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* HEADER */
+header {
+  background-color: #f8f9fa;
+  color: #000;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar {
+  padding: 0;
+}
+
+.container-fluid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.navbar-brand {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #000;
+}
+
+.navbar-nav {
+  align-items: center;
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-link {
+  color: #000;
+  text-decoration: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  background-color: #eee;
+  color: #000;
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: #000;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-link:hover,
+.btn-link:focus {
+  background-color: #eee;
+  color: #000;
+}
+
+/* Mega Menu Dropdown */
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  display: none; /* Oculto por defecto - Manejado por Bootstrap */
+  padding: 1rem;
+  z-index: 1000;
+}
+
+.mega-menu .row {
+  display: flex;
+  flex-wrap: wrap; /* Asegura que las columnas se envuelvan en pantallas pequeñas */
+}
+
+.mega-menu .col-md-4 {
+  flex: 1; /* Distribuye el espacio equitativamente entre las columnas */
+  min-width: 200px; /* Evita que las columnas se estrechen demasiado */
+  margin-bottom: 1rem; /* Añade espacio entre las columnas en pantallas pequeñas */
+}
+
+.mega-menu h5 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.mega-menu a {
+  display: block;
+  padding: 0.25rem 0;
+  color: #000;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out;
+}
+
+.mega-menu a:hover,
+.mega-menu a:focus {
+  color: #0a58ca;
+}
+
+/* Media Queries (Ajustes Adicionales) */
+@media (max-width: 768px) {
+  /* No necesitamos ocultar el mega-menu aquí, Bootstrap lo maneja */
+
+  .mega-menu {
+      position: static; /* Cambia a static para fluir con el contenido */
+      display: none; /* Asegura que se oculte en mobile inicialmente */
+      opacity: 1; /* Asegura que no haya problemas con opacidad de bootstrap */
+      visibility: visible; /* Asegura que no haya problemas con visibilidad de bootstrap */
+      width: 100%; /* Ocupa todo el ancho */
+      box-shadow: none; /* Quita la sombra en mobile */
+      border: none; /* Quita el borde en mobile */
+      padding: 0; /* Quita el padding en mobile */
+      margin-top: 0.5rem; /* Espacio superior */
+  }
+
+  .mega-menu .row {
+      display: block; /* Cambia a block para apilar las columnas */
+  }
+
+  .mega-menu .col-md-4 {
+      width: 100%; /* Ocupa todo el ancho en mobile */
+      min-width: auto; /* Permite el ancho automatico */
+      margin-bottom: 0.5rem; /* Reduce el espacio entre columnas en mobile */
+  }
+}
+
+/* Estilos para la página de precios */
+.precios-page {
+  text-align: center;
+  padding: 2rem;
+  animation: fadeIn 1s ease-in;
+}
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.toggle-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+/* Estilos para la tabla de precios */
+.pricing-table {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden; /* Para que el border-radius funcione en la tabla */
+}
+
+.pricing-table th, .pricing-table td {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.pricing-table th {
+  background-color: #f8f8f8;
+  font-weight: bold;
+}
+
+.pricing-table thead th:first-child {
+  background-color: transparent;
+  border-bottom: none;
+}
+
+.pricing-table th:first-child,
+.pricing-table td:first-child {
+  text-align: left;
+  font-weight: bold;
+}
+
+.pricing-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.plan-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.monthly-price, .annual-price {
+  display: block;
+}
+
+.feature-row td {
+  font-size: 0.9rem;
+}
+
+.action-row button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.action-row button:hover {
+  transform: scale(1.05);
+}
+
+.action-row button.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.action-row button.btn-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.action-row button.btn-warning {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+/* Estilo para la fila activa al pasar el mouse (jQuery) */
+.pricing-table tbody tr.table-active {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Estilo para la celda/columna seleccionada (jQuery) */
+.pricing-table th.selected,
+.pricing-table td.selected {
+  background-color: #e9ecef;
+}
+
+/* Tooltip (usando Bootstrap nativo) */
+[data-tooltip] {
+  position: relative;
+  cursor: help;
+}
+
+.tooltip-inner {
+  background-color: #000;
+  color: #fff;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+}
+
+.bs-tooltip-top .arrow::before, .bs-tooltip-auto[data-popper-placement^=top] .arrow::before {
+  border-top-color: #000 !important;
+}
+
+.bs-tooltip-bottom .arrow::before, .bs-tooltip-auto[data-popper-placement^=bottom] .arrow::before {
+  border-bottom-color: #000 !important;
+}
+
+.bs-tooltip-left .arrow::before, .bs-tooltip-auto[data-popper-placement^=left] .arrow::before {
+  border-left-color: #000 !important;
+}
+
+.bs-tooltip-right .arrow::before, .bs-tooltip-auto[data-popper-placement^=right] .arrow::before {
+  border-right-color: #000 !important;
+}
+
+/* FOOTER */
+footer {
+  background-color: #eee;
+  color: #000;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  /* Transición suave para el fondo y el color */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+footer p {
+  margin-top: 0.5rem;
+}
+
+
+/* REDES */
+.redes {
+  background-color: #eee;
+  color: #000;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  /* Transición suave para el fondo y el color */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.redes a {
+  color: #000;
+  text-decoration: none;
+  font-size: 1.1rem;
+  /* Transición suave para el color */
+  transition: color 0.3s ease;
+}
+
+.redes a:hover,
+.redes a:focus {
+  color: #333;
+}
+
+
+/* ESTILOS MODO OSCURO */
+body.dark-mode {
+  background-color: #000;
+  color: #eee;
+}
+
+/* Navbar Modo Oscuro */
+body.dark-mode header,
+body.dark-mode .navbar.navbar-dark,
+body.dark-mode .navbar.bg-dark {
+  background-color: #000 !important; /* Override Bootstrap's background */
+}
+
+body.dark-mode .navbar-brand,
+body.dark-mode .navbar-nav .nav-link,
+body.dark-mode .navbar-nav .nav-link.btn-link {
+  color: #fff;
+}
+
+body.dark-mode .navbar-nav .nav-link:hover,
+body.dark-mode .navbar-nav .nav-link:focus,
+body.dark-mode .navbar-nav .nav-link.btn-link:hover,
+body.dark-mode .navbar-nav .nav-link.btn-link:focus {
+  background-color: #495057;
+  color: #fff;
+}
+
+body.dark-mode .mega-menu {
+  background-color: #000;
+  border-color: #000;
+  color: #fff;
+}
+
+body.dark-mode .mega-menu h5,
+body.dark-mode .mega-menu a {
+  color: #fff;
+}
+
+body.dark-mode .dropdown-menu {
+  background-color: #000;
+  border-color: #495057;
+}
+
+body.dark-mode .dropdown-item {
+  color: #fff;
+}
+
+body.dark-mode .dropdown-item:hover,
+body.dark-mode .dropdown-item:focus {
+  background-color: #495057;
+  color: #fff;
+}
+
+.precios-page.dark-mode-section {
+  color: #eee;
+}
+
+.precios-page.dark-mode-section h1 {
+  color: #eee;
+}
+
+.toggle-container.dark-mode-toggle-container .form-check-label {
+  color: #eee;
+}
+
+.pricing-table.dark-mode-table {
+  background-color: #333;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.pricing-table.dark-mode-table th,
+.pricing-table.dark-mode-table td {
+  background-color: #000;
+  color: #eee;
+  border-bottom: 1px solid #555;
+}
+
+.pricing-table.dark-mode-table th {
+  background-color: #222;
+}
+
+.pricing-table.dark-mode-table tbody tr.table-active {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.pricing-table.dark-mode-table th.selected,
+.pricing-table.dark-mode-table td.selected {
+  background-color: #444;
+}
+
+footer.dark-mode-footer {
+  background-color: #000;
+  color: #eee;
+}
+
+.redes.dark-mode-section {
+  background-color: #000;
+  color: #eee;
+}
+
+.redes.dark-mode-section a.dark-mode-link {
+  color: #eee;
+}
+
+.redes.dark-mode-section a.dark-mode-link:hover {
+  color: #ddd;
+}
